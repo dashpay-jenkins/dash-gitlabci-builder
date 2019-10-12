@@ -20,7 +20,3 @@ RUN apt-get update && apt-get install -y g++-arm-linux-gnueabihf && apt-get clea
 RUN apt-get update && apt-get install -y g++-mingw-w64-i686 g++-mingw-w64-x86-64 nsis wine64 wine-stable wine32 bc && apt-get clean && rm -fr /var/cache/apt/*
 # mac
 RUN apt-get update && apt-get install -y cmake imagemagick libcap-dev librsvg2-bin libz-dev libbz2-dev libtiff-tools && apt-get clean && rm -fr /var/cache/apt/*
-
-# dash_hash
-RUN git clone https://github.com/dashpay/dash_hash
-RUN cd dash_hash && python3 setup.py install
