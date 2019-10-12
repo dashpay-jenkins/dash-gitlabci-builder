@@ -4,7 +4,7 @@ FROM ubuntu:bionic
 # (zlib1g-dev and libssl-dev are needed for the Qt host binary builds, but should not be used by target binaries)
 # We split this up into multiple RUN lines as we might need to retry multiple times on Travis. This way we allow better
 # cache usage.
-RUN apt-get update && apt-get install -y git && apt-get clean && rm -fr /var/cache/apt/*
+RUN apt-get update && apt-get install -y wget git && apt-get clean && rm -fr /var/cache/apt/*
 RUN apt-get update && apt-get install -y g++ && apt-get clean && rm -fr /var/cache/apt/*
 RUN apt-get update && apt-get install -y autotools-dev libtool m4 automake autoconf pkg-config && apt-get clean && rm -fr /var/cache/apt/*
 RUN apt-get update && apt-get install -y zlib1g-dev libssl1.0-dev curl ccache bsdmainutils cmake && apt-get clean && rm -fr /var/cache/apt/*
